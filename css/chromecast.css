@@ -6,7 +6,7 @@
   src: local('Ericsson'), url('../fonts/EHSMB.TTF') format('truetype');
 }
 
-body { min-width:600px; margin-right:20px; font-family:"Arial","Sans-serif"; font-size:10px; overflow-x:hidden; }
+body { margin-right:20px; font-family:"Arial","Sans-serif"; font-size:10px; overflow-x:hidden; }
 
 #nowplaying { 
 	font-family:'Courier', 'Courier New'; 
@@ -34,11 +34,16 @@ body { min-width:600px; margin-right:20px; font-family:"Arial","Sans-serif"; fon
 table, td { font-size:12px; }
 
 img.img_podcast { width:75px; }
-td.podname  { width:700px; }
+td.podname  { }
+td.playbutton { width:30px; }
 
-.results { border:0px solid black; }
+.results { border:0px solid black; width:100%; }
 
 .odd { background-color:lightgrey; }
 .even { background-color:#ffffff; } 
 .playing { background-color:#224C77; color:White; font-weight:bold; }
+
+h1 {font-family: 'Yanone Kaffeesatz', arial, serif; font-size:35px;}
+
+.del_feed { cursor:pointer; }
 

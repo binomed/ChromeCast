@@ -10,94 +10,16 @@
       var player = $("idplayer");
             
       var data = {};     
+            
+      function ouvreFeeds() {
+        chrome.tabs.create({url:"feeds.html"});
+      }
       
       function affiche() {
-        
-        $('welcome').innerText = chrome.i18n.getMessage("welcomeMsg");
-        $('feedurl').innerText = chrome.i18n.getMessage("feedURL");
-        
-        data = bg.getPodcasts();
-        
-        var podcasts = new Array();        
-        podcasts = data.podcasts;
-                
-        $('img_podcast').innerHTML = "";
-        $('meta_podcast').innerHTML = "";
-        $('podcast').innerHTML = "";  
-        
-        if(data.img != "") {
-          var img = new Element("img", {'src':data.img, 'class':'img_podcast'});
-          $('img_podcast').appendChild(img);
-        }
-        
-        var title = new Element("h2").update(data.title);
-        var subtitle = new Element("p").update(data.subtitle);
-        
-        $('meta_podcast').appendChild(title);
-        $('meta_podcast').appendChild(subtitle);
-             
-        var tableElt = new Element("table", {'class':'results'});
-                                
-        for(i = 0; i < podcasts.length; i++) {
-        
-          var podcast = {};
-                            
-          var trElt = new Element("tr");
-          
-          // Titre
-          var tdTitre = new Element("td", {'class':'podname', 'id':podcasts[i].guid}).update(podcasts[i].subtitle);
-          var tdURL = new Element("td");
-          
-          var button = new Element("button", {'idplay':''+i,'onclick':'play("'+i+'")'}).update("Play");
-          
-          tdURL.appendChild(button);
-          
-          if(i%2 == 0) {
-            tdTitre.addClassName('odd');
-            tdURL.addClassName('odd');
-          } else {
-            tdTitre.addClassName('even');
-            tdURL.addClassName('even');
-          }
-          
-          trElt.appendChild(tdTitre);
-          trElt.appendChild(tdURL);
-          
-          
-          tableElt.appendChild(trElt);         
-        }
-                                                                 
-        $('podcast').appendChild(tableElt);
-        
         if(bg.isPlaying()) {
           $('nowplaying').innerText = bg.titlePlaying();
           $('imgplaypause').src = 'images/pause.png';
-          
-          arrayPodcasts = $$('#podcast tr');
-          arrayTds = arrayPodcasts[bg.numPlaying()-1].getElementsByTagName("td");
-          if(arrayTds[0].id == bg.idPlaying()) {          
-  			    arrayTds[0].addClassName('playing');
-            arrayTds[1].addClassName('playing');
-		      }
         }
-      }
-      
-      function play(num) {
-        bg.togglePlayPodcast(num);
-        $('nowplaying').innerText = bg.titlePlaying();
-        $('imgplaypause').src = 'images/pause.png';
-        
-        arrayPodcasts = $$('#podcast tr');
-        
-        for(i = 0; i < arrayPodcasts.length; i++) {
-          arrayTds = arrayPodcasts[i].getElementsByTagName("td");
-          arrayTds[0].removeClassName('playing');
-          arrayTds[1].removeClassName('playing');
-        }
-        
-        arrayTds = arrayPodcasts[num].getElementsByTagName("td");
-        arrayTds[0].addClassName('playing');
-        arrayTds[1].addClassName('playing');
       }
       
       function nextPodcast() {
@@ -167,17 +89,6 @@
           } 
         
       }
-      
-      function changeRSS() {
-        var fluxURL = $('idUrlPodcast').value;
-        
-        if(fluxURL != "") {            
-            localStorage["url_podcast"] = fluxURL;            
-            bg.setFlux(fluxURL);
-            
-            affiche();
-        }
-      }
             
     </script>
   </head>
@@ -197,19 +108,9 @@
       </tr>
     </table>		
     <br /><br />
-    <span id="feedurl">&nbsp;</span> <input type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="changeRSS();">OK</button>
     
-    <div id="meta">
-          <table>
-            <tr>
-              <td id="img_podcast"></td>
-              <td id="meta_podcast"></td>
-            </tr>
-          </table>
-    </div>
-    <div id="podcast">
+    <a href="javascript:ouvreFeeds();">Feeds</a>
     
-    </div>
     </div>
    </body>
 </html>
