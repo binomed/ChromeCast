@@ -1,0 +1,250 @@
+<html>
+  <head>
+      <script>
+    
+        var xhr = new XMLHttpRequest();
+        var response;
+        
+        var meta = {};
+        var podcasts = new Array();
+        
+        var numplaying = 0;
+            
+        //xhr.open("GET", "http://radiofrance-podcast.net/podcast09/rss_10906.xml", true);
+        var fluxDB = localStorage["url_podcast"];
+        
+        
+        function afficheUnread() {
+          podcasts = new Array();
+          var items = response.getElementsByTagName("item");
+          
+         if(response.getElementsByTagName('image')[0].getElementsByTagName('url').length > 0) {
+            meta.img = response.getElementsByTagName('image')[0].getElementsByTagName('url')[0].childNodes[0].nodeValue;        
+          } else {
+            meta.img = "";
+          }
+          
+          var title = response.getElementsByTagName('title')[0].childNodes[0].nodeValue;
+          var subtitle = response.getElementsByTagName('description')[0].childNodes[0].nodeValue;
+          
+          meta.title = title;
+          meta.subtitle = subtitle;
+          
+          for(i = 0; i < items.length; i++) {
+            var podcast = {};
+            
+		        podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
+            podcast.subtitle = items[i].getElementsByTagName('subtitle')[0].childNodes[0].nodeValue;
+            podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
+            
+            podcasts.push(podcast);
+          }
+          
+          meta.podcasts = podcasts;
+          
+          //chrome.browserAction.setBadgeText({'text':items.length + ''});
+          
+          var viewPopupUrl = chrome.extension.getURL('popup.html');	
+          var views = chrome.extension.getViews();	
+          
+          var blntrouve = false;
+          for(i = 0; i < views.length; i++) {
+            if (views[i].location.href == viewPopupUrl) {
+             var popupview = views[i];  		
+             blntrouve = true;
+             break;
+            }
+          }
+                    
+          if(blntrouve) {
+            popupview.affiche();
+          }
+        }
+        
+        function getPodcasts() {
+          if(meta.podcasts.length == 0) {
+            afficheUnread();
+          }
+          
+          return meta;
+        }
+        
+        function setFlux(flux) {
+          xhr.open("GET", flux, true);
+          xhr.send();
+          
+          afficheUnread();
+        }
+        
+        var playing = false;
+        var nowplaying = "";
+	      var idplaying = "";
+        var player;
+        
+        function togglePlay() {
+          if(player.paused) {
+            player.play();
+            playing = true;
+          } else {
+            player.pause();
+            playing = false;
+          }          
+        }
+        
+        function togglePlayPodcast(numpodcast) {
+          var podcast = meta.podcasts[numpodcast];
+          numplaying  = parseInt(numpodcast)+1;
+          
+          if(podcast.subtitle != nowplaying) {                
+            player.src = podcast.url;
+            player.load();
+            nowplaying = podcast.subtitle;
+	          idplaying = podcast.guid;
+          }
+          
+          
+          if(player.paused) {
+            player.play();
+            playing = true;
+          } else {
+            player.pause();
+            playing = false;
+          }
+        }
+        
+        function playNext() {  
+          numplaying = numplaying + 1;
+          if(numplaying > meta.podcasts.length) {
+            numplaying = 1;
+          }
+          
+          var podcast = meta.podcasts[numplaying-1];
+                
+          player.src = podcast.url;
+          player.load();
+          nowplaying = podcast.subtitle;
+	        idplaying = podcast.guid;
+          
+          player.play();
+          playing = true;
+          display();
+        }
+        
+        function playPrevious() { 
+          numplaying = numplaying - 1;
+          if(numplaying < 1) {
+            numplaying = meta.podcasts.length;
+          }
+          
+          var podcast = meta.podcasts[numplaying-1];
+                
+          player.src = podcast.url;
+          player.load();
+          nowplaying = podcast.subtitle;
+	        idplaying = podcast.guid;
+          
+          player.play();
+          playing = true;
+          display();
+        }
+          
+        var isPlaying = function() { return playing; }
+        var titlePlaying = function() { return nowplaying; }
+	      var idPlaying = function() { return idplaying; }
+        var numPlaying = function() { return numplaying; }
+
+      	function stopAction() {
+      		player.pause();		
+      		player.src = "";
+      		stopplaying();
+      	}
+        
+        function stopplaying() {
+          var viewPopupUrl = chrome.extension.getURL('popup.html');	
+          var views = chrome.extension.getViews();	
+          
+          var i = 0;
+          while (views[i].location.href != viewPopupUrl) {		
+            i++;
+          }           
+          var popupview = views[i];
+          
+          nowplaying = "";
+	        idplaying = "";
+          popupview.stopplaying();
+	        playing = false;
+    
+        }
+        
+        function display() {
+          var viewPopupUrl = chrome.extension.getURL('popup.html');	
+          var views = chrome.extension.getViews();	
+          
+          var blntrouve = false;
+          for(i = 0; i < views.length; i++) {
+            if (views[i].location.href == viewPopupUrl) {
+             var popupview = views[i];  		
+             blntrouve = true;
+             break;
+            }
+          }
+          
+          if (blntrouve) {
+            popupview.displayPlaying();
+          } 
+        }
+        
+        function gotError() {
+          playing = false;
+          var viewPopupUrl = chrome.extension.getURL('popup.html');	
+          var views = chrome.extension.getViews();	
+          
+          var blntrouve = false;
+          for(i = 0; i < views.length; i++) {
+            if (views[i].location.href == viewPopupUrl) {
+             var popupview = views[i];  		
+             blntrouve = true;
+             break;
+            }
+          }           
+          
+          if(nowplaying != "") {
+            nowplaying = "ERROR : " + player.error.code;
+            
+            if(blntrouve) {
+              popupview.playerror(player.error.code);
+            }    
+          }
+        }
+        
+        function loadpage() {
+        
+          player = document.getElementById("idplayer");
+        
+          if (!fluxDB) {
+            xhr.open("GET", "http://www.ouifm.fr/podcast/johannroques.rss", true);
+          } else {
+            xhr.open("GET", fluxDB, true);
+          }
+            
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+              // innerText does not let the attacker inject HTML elements.          
+              response = xhr.responseXML;
+              afficheUnread();
+            }
+          }
+          
+          xhr.send();
+        
+          player.addEventListener("ended", function() {playNext();}, true);
+          player.addEventListener("error", function() {gotError();},true);
+        }
+      </script>
+  </head>
+  <body onload="loadpage();">
+    <audio id="idplayer" src="" type='audio/mpeg;'></audio>
+    
+  </body>
+  
+</html>

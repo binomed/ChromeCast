@@ -1,0 +1,14 @@
+{
+  "extDesc":{
+    "message":"Une extension qui vous permettra de lire votre podcast favori dans votre navigateur",
+    "description":"Description"
+  },
+  "feedURL":{
+    "message":"URL du flux :",
+    "description":"Feed URL"
+  },
+  "welcomeMsg":{
+    "message":"Bienvenue sur ChromeCast",
+    "description":"Welcome message"
+  }
+}
