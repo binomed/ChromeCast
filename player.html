@@ -143,7 +143,7 @@
           for(i = 0; i < items.length; i++) {
             var podcast = {};
             
-		        podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
+		    podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
             podcast.subtitle = items[i].getElementsByTagName('subtitle')[0].childNodes[0].nodeValue;
             podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
             
@@ -199,7 +199,7 @@
             player.src = podcast.url;
             player.load();
             nowplaying = podcast.subtitle;
-	          idplaying = podcast.guid;
+	        idplaying = podcast.guid;
           }
           
           
@@ -383,7 +383,7 @@
           for(i = 0; i < items.length; i++) {
             var podcast = {};
             
-		        podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
+		    podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
             podcast.subtitle = items[i].getElementsByTagName('subtitle')[0].childNodes[0].nodeValue;
             podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
             
@@ -420,7 +420,6 @@
   </head>
   <body onload="loadpage();">
     <audio id="idplayer" src="" type='audio/mpeg;'></audio>
-    
   </body>
   
 </html>

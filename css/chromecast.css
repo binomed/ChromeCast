@@ -24,6 +24,7 @@ body { margin-right:20px; font-family:"Arial","Sans-serif"; font-size:10px; over
 }
 
 .logo {width:200px;height:64px;position:absolute;top:20px;right:20px; background:url('../images/logo.png');z-index:0;}
+.logopopup {width:200px;height:64px;position:absolute;top:50px;right:20px; background:url('../images/logo.png');z-index:0;}
 .content {position:relative; z-index:99;}
 
 .button { background:url('../images/orb.png'); width:50px; height:26px; text-align:center; }
@@ -46,4 +47,18 @@ td.playbutton { width:30px; }
 h1 {font-family: 'Yanone Kaffeesatz', arial, serif; font-size:35px;}
 
 .del_feed { cursor:pointer; }
+
+a {color:#000000; font-weight:bold; text-decoration:none; font-size:13px;}
+a:hover {color:#224C77; }
+.feedsbutton { 
+	padding:10px; 
+	background-color:#ebebeb;
+	-moz-box-shadow: 2px 2px 5px #999;
+	-webkit-box-shadow: 2px 2px 5px #999;
+	box-shadow: 2px 2px 5px #999;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px;
+}
+
 

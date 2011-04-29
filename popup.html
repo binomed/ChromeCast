@@ -95,10 +95,11 @@
   <body onload="affiche();">
     
     
-    <div class="logo"></div>
+    <div class="logopopup"></div>
     <div class="content">
     <div id="nowplaying"><span style="font-style:italic;" id="welcome">&nbsp;</span></div>
     <br />
+	
     <table>
       <tr>
         <td><div class="button" onclick="prevPodcast();"><img src="images/prev.png" /></div></td>
@@ -107,9 +108,8 @@
         <td><div class="button" onclick="nextPodcast();"><img src="images/next.png" /></div></td>
       </tr>
     </table>		
-    <br /><br />
-    
-    <a href="javascript:ouvreFeeds();">Feeds</a>
+    <br />    
+    <p style="text-align:center;"><a class="feedsbutton" href="javascript:ouvreFeeds();">Show feeds</a></p>
     
     </div>
    </body>

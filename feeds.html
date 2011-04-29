@@ -142,20 +142,28 @@
        */             
       function play(fed, num) {
         bg.togglePlayPodcast(fed, num);
+		
+		var nump1 = parseInt(num) + 1;
+		var fedp1 = parseInt(fed) + 1;
+		
         /*$('nowplaying').innerText = bg.titlePlaying();
         $('imgplaypause').src = 'images/pause.png';*/
         
-        /*arrayPodcasts = $$('#podcast tr');
-        
+        arrayPodcasts = $$('#podcasts tr');
+		//alert('#podcasts .results:nth-of-type('+fedp1+') tr');
+
         for(i = 0; i < arrayPodcasts.length; i++) {
           arrayTds = arrayPodcasts[i].getElementsByTagName("td");
           arrayTds[0].removeClassName('playing');
           arrayTds[1].removeClassName('playing');
         }
         
+		arrayPodcasts = $$('#podcasts .results:nth-of-type('+fedp1+') tr');
+		console.log("Playing : feed " + fed + ", num " + num + ", row " + nump1);
+		
         arrayTds = arrayPodcasts[num].getElementsByTagName("td");
         arrayTds[0].addClassName('playing');
-        arrayTds[1].addClassName('playing');  */
+        arrayTds[1].addClassName('playing'); 
       }
       
             
