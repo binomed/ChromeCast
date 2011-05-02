@@ -31,7 +31,11 @@
         var numplaying = 0;
         var playing = false;
         var nowplaying = "";
-	      var idplaying = "";
+	    var idplaying = "";
+		
+		var curFeed;
+		var curPod;
+		
         var player;
                     
         var feedsString = localStorage.getItem("feeds");
@@ -44,7 +48,7 @@
         /** ACCESSEURS **/
         var isPlaying = function() { return playing; }
         var titlePlaying = function() { return nowplaying; }
-	      var idPlaying = function() { return idplaying; }
+	    var idPlaying = function() { return idplaying; }
         var numPlaying = function() { return numplaying; }
         
         /**
@@ -192,7 +196,7 @@
         function togglePlayPodcast(numfeed, numpodcast) {
           
           var podcast = feeds[numfeed].podcasts[numpodcast];
-          console.log("Podcast " + numfeed + ", " + numpodcast);
+          console.log("Podcast " + numfeed + ", " + numpodcast + " : number " + feeds[numfeed].podcasts.length);
           numplaying  = parseInt(numpodcast)+1;
           
           if(podcast.subtitle != nowplaying) {                
@@ -200,6 +204,8 @@
             player.load();
             nowplaying = podcast.subtitle;
 	        idplaying = podcast.guid;
+			curFeed = numfeed;
+			curPod = numpodcast;
           }
           
           
@@ -216,6 +222,7 @@
          * Fonction qui joue le prochain podcast
          */                 
         function playNext() {  
+		  
           numplaying = numplaying + 1;
           if(numplaying > meta.podcasts.length) {
             numplaying = 1;
@@ -410,7 +417,7 @@
           if(blntrouve) {
             popupview.affiche();
           }
-          
+        
         }
       
         
