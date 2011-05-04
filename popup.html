@@ -1,116 +1,93 @@
 <html>
-  <head>
-    <script type="text/javascript" src="js/prototype.js"></script>
-    <link type="text/css" media="screen" rel="stylesheet" href="css/chromecast.css" charset="utf-8" /> 
-        
-    <script type="text/javascript">
-      var bg = chrome.extension.getBackgroundPage();
-                 
-      var playing = false;
-      var player = $("idplayer");
-            
-      var data = {};     
-            
-      function ouvreFeeds() {
-        chrome.tabs.create({url:"feeds.html"});
-      }
-      
-      function affiche() {
-        if(bg.isPlaying()) {
-          $('nowplaying').innerText = bg.titlePlaying();
-          $('imgplaypause').src = 'images/pause.png';
-        }
-      }
-      
-      function nextPodcast() {
-        bg.playNext();
-      }
-      
-      function prevPodcast() {
-        bg.playPrevious();
-      }
-      
-      function displayPlaying() {
-        if(bg.isPlaying()) {
-          $('nowplaying').innerText = bg.titlePlaying();
-          $('imgplaypause').src = 'images/pause.png';
-          
-          arrayPodcasts = $$('#podcast tr');
-          
-          for(i = 0; i < arrayPodcasts.length; i++) {
-            arrayTds = arrayPodcasts[i].getElementsByTagName("td");
-            arrayTds[0].removeClassName('playing');
-            arrayTds[1].removeClassName('playing');
-          }
-          
-          arrayTds = arrayPodcasts[bg.numPlaying()-1].getElementsByTagName("td");
-          arrayTds[0].addClassName('playing');
-          arrayTds[1].addClassName('playing');
-        }
-      }
-      
-      function togglePlayPause() {
-        if(bg.nowplaying != "") {
-          bg.togglePlay();
-          if(bg.playing) {
-            $('imgplaypause').src = 'images/pause.png';
-          } else {
-            $('imgplaypause').src = 'images/play.png';
-          }
-         } 
-      }
+	<head>
+		<script type="text/javascript" src="js/prototype.js"></script>
+		<link type="text/css" media="screen" rel="stylesheet" href="css/chromecast.css" charset="utf-8" /> 
+		<script type="text/javascript">
+		/*  This file is part of ChromeCast (Chrome Extension)
+		Copyright (C) 2010 Binomed (binomed.team@gmail.com) 
 
-	   function stopAction() { bg.stopAction(); }
-	
-      
-      //function pause() { $('nowplaying').innerText = ""; }
-      function stopplaying() { 
-        $('nowplaying').innerHTML = "<span style='font-style:italic;'>Chromecast</span>"; 
-        $('imgplaypause').src = 'images/play.png';
-        arrayPodcasts = $$('#podcast tr');
-          
-        for(i = 0; i < arrayPodcasts.length; i++) {
-          arrayTds = arrayPodcasts[i].getElementsByTagName("td");
-          arrayTds[0].removeClassName('playing');
-          arrayTds[1].removeClassName('playing');
-        } 
-      }
-      
-      function playerror(code) { 
-        $('nowplaying').innerText = "ERROR : Unable to read source"; 
-        $('imgplaypause').src = 'images/play.png';
-        
-        arrayPodcasts = $$('#podcast tr');
-          
-          for(i = 0; i < arrayPodcasts.length; i++) {
-            arrayTds = arrayPodcasts[i].getElementsByTagName("td");
-            arrayTds[0].removeClassName('playing');
-            arrayTds[1].removeClassName('playing');
-          } 
-        
-      }
-            
-    </script>
-  </head>
-  <body onload="affiche();">
-    
-    
-    <div class="logopopup"></div>
-    <div class="content">
-    <div id="nowplaying"><span style="font-style:italic;" id="welcome">&nbsp;</span></div>
-    <br />
-	
-    <table>
-      <tr>
-        <td><div class="button" onclick="prevPodcast();"><img src="images/prev.png" /></div></td>
-        <td><div class="button" onclick="togglePlayPause();"><img id="imgplaypause" src="images/play.png" /></div></td>
-        <td><div class="button" onclick="stopAction();"><img src="images/stop.png" /></div></td>
-        <td><div class="button" onclick="nextPodcast();"><img src="images/next.png" /></div></td>
-      </tr>
-    </table>		
-    <br />    
-    <p style="text-align:center;"><a class="feedsbutton" href="javascript:ouvreFeeds();">Show feeds</a></p>
-    
-    </div>
-   </body>
+		This library is free software; you can redistribute it and/or 
+		modify it under the terms of the GNU Library General Public 
+		License as published by the Free Software Foundation; version 2 
+		of the License. 
+
+		This library is distributed in the hope that it will be useful, 
+		but WITHOUT ANY WARRANTY; without even the implied warranty of 
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+		Library General Public License for more details. 
+
+		You should have received a copy of the GNU Library General Public License 
+		along with this library; see the file COPYING.LIB.  If not, write to 
+		the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+		Boston, MA 02110-1301, USA. 
+		*/ 
+		
+		var bg = chrome.extension.getBackgroundPage();
+                 
+		var playing = false;
+		var player = $("idplayer");
+
+		var data = {};     
+
+		function ouvreFeeds() {
+			chrome.tabs.create({url:"feeds.html"});
+		}
+
+		function affiche() {
+			if(bg.isPlaying()) {
+				$('nowplaying').innerText = bg.titlePlaying();
+				$('imgplaypause').src = 'images/pause.png';
+			}
+		}
+
+		function nextPodcast() { bg.playNext(); }
+		function prevPodcast() { bg.playPrevious(); }
+
+		function displayPlaying() {
+			if(bg.isPlaying()) {
+				$('nowplaying').innerText = bg.titlePlaying();
+				$('imgplaypause').src = 'images/pause.png';
+			}
+		}
+
+		function togglePlayPause() {
+			if(bg.nowplaying != "") {
+				bg.togglePlay();
+				if (bg.playing) { $('imgplaypause').src = 'images/pause.png'; } 
+				else { $('imgplaypause').src = 'images/play.png'; }
+			} 
+		}
+
+		function stopAction() { bg.stopAction(); }
+
+		//function pause() { $('nowplaying').innerText = ""; }
+		
+		function stopplaying() { 
+			$('nowplaying').innerHTML = "<span style='font-style:italic;'>Chromecast</span>"; 
+			$('imgplaypause').src = 'images/play.png';
+		}
+
+		function playerror(code) { 
+			$('nowplaying').innerText = "ERROR : Unable to read source"; 
+			$('imgplaypause').src = 'images/play.png';
+			stopAction();			
+		}
+		</script>
+	</head>
+	<body onload="affiche();">
+		<div class="content">
+		<div id="nowplaying"><span style="font-style:italic;" id="welcome">&nbsp;</span></div>
+		<br />
+		<table>
+			<tr>
+				<td><div class="button" onclick="prevPodcast();"><img src="images/prev.png" /></div></td>
+				<td><div class="button" onclick="togglePlayPause();"><img id="imgplaypause" src="images/play.png" /></div></td>
+				<td><div class="button" onclick="stopAction();"><img src="images/stop.png" /></div></td>
+				<td><div class="button" onclick="nextPodcast();"><img src="images/next.png" /></div></td>
+			</tr>
+		</table>		
+		<br />    
+		<p style="text-align:center;"><a class="feedsbutton" href="javascript:ouvreFeeds();">Show feeds</a></p>
+		</div>
+	</body>
 </html>
