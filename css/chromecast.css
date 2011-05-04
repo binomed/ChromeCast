@@ -99,8 +99,8 @@ a:hover, .feedsbutton:hover {color:#224C77; }
 	width:350px;
 	padding:5px;
 	position:absolute;
-	top:80px;
-	left:10px;
+	margin-left:5px;
+	margin-top:10px;
 	background-color:white;
 	z-index:101;
 }

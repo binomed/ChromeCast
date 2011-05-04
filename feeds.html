@@ -178,14 +178,14 @@
 		<div class="logo"></div>
 		<div class="content">
 			<h1 class="title">Liste des podcasts</h1>
-			<a class="feedsbutton addbutton" onclick="javascript:jQuery('#addFeedBox')[0].show('slow');">Ajouter un flux</a>
+			<a class="feedsbutton addbutton" onclick="javascript:jQuery('#addFeedBox').fadeIn('slow');">Ajouter un flux</a>
+			<div class="addfeed" id="addFeedBox" style="display:none;">
+				<a href="#" onclick="javascript:jQuery('#addFeedBox').fadeOut('slow');" style="cursor:pointer;float:right;"><img src="images/close.gif" /></a>
+				URL du flux :<br />
+				<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="addRSS();">OK</button>
+			</div>
 			<br /><br />
 			<div id="podcasts"></div>
-		</div>
-		<div class="addfeed" id="addFeedBox" style="display:none;">
-			<img src="images/close.gif" style="float:right;" onclick="javascript:jQuery('#addFeedBox')[0].hide('slow');" style="cursor:pointer;" />
-			URL du flux :<br />
-			<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="addRSS();">OK</button>
 		</div>
 	</body>
 </html>
