@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>ChromeCast by Binomed - Podcasts</title>
 		<script type="text/javascript" src="js/prototype.js"></script>
 		<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
@@ -37,7 +38,7 @@
 		var feeds = {};
 
 		/**
-		* Fonction qui vérifie la formation d'une URL
+		* Fonction qui vÃ©rifie la formation d'une URL
 		*/             
 		function isUrl(s) {
 			var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
@@ -64,11 +65,11 @@
 				var imgPC = new Element("img", {'src':feeds[i].img, 'class':'img_podcast'});
 				metaTdImg.appendChild(imgPC);
 
-				var title = new Element("h2").update(feeds[i].title);
+				var title = new Element("a", {'href':feeds[i].link}).update("<h3>" + feeds[i].title + "</h3>");
 				var subtitle = new Element("p").update(feeds[i].subtitle);
 				metaTdTitle.appendChild(title);
 				metaTdTitle.appendChild(subtitle);
-
+				
 				var imgDel = new Element("img", {'src':'images/delete.png', 'class':'del_feed', 'onclick':'javascript:delFeed("'+feeds[i].url+'")'});
 				metaTdDel.appendChild(imgDel);
 
@@ -91,7 +92,7 @@
 					var tdTitre = new Element("td", {'class':'podname', 'id':feeds[i].podcasts[j].guid}).update(feeds[i].podcasts[j].subtitle);
 					var tdURL = new Element("td", {'class':'playbutton'});
 
-					var button = new Element("button", {'class':'feedsbutton','idplay':''+j,'onclick':'play("'+i+'", "'+j+'")'}).update("Play");
+					var button = new Element("button", {'class':'playbuttonclick','idplay':''+j,'onclick':'play("'+i+'", "'+j+'")'}).update("Play");
 
 					tdURL.appendChild(button);
 
@@ -124,7 +125,7 @@
 			if(feed != "") {
 				if(isUrl(feed)) {                        
 					bg.addFeed(feed);                   
-					affiche();
+					location.reload(true);
 				} else {
 					alert("Mauvais format URL");
 				}
@@ -135,8 +136,9 @@
 		* Fonction de suppression d'un feed
 		*/             
 		function delFeed(url) {
-			if(confirm("Êtes-vous sûr de vouloir supprimer le podcast : " + bg.getTitleByUrl(url) + " ?")) {
+			if(confirm(chrome.i18n.getMessage("delFeed", bg.getTitleByUrl(url)))) {
 				bg.delFeed(url);
+				location.reload(true);
 			}
 		}
 
@@ -170,22 +172,36 @@
 				arrayTds[1].addClassName('playing'); 
 			}
 		}
-
-
+		
+		function showPopup() {
+			jQuery('#addFeedBox').fadeIn('slow');
+		}
+					
 		</script>
 	</head>
 	<body onload="affiche();">
-		<div class="logo"></div>
-		<div class="content">
-			<h1 class="title">Liste des podcasts</h1>
-			<a class="feedsbutton addbutton" onclick="javascript:jQuery('#addFeedBox')[0].show('slow');">Ajouter un flux</a>
-			<br /><br />
-			<div id="podcasts"></div>
+		<div class="bodycont">
+			<div class="logo"></div>
+			<div class="content">
+				<h1 class="title" id="listlabel">Liste des podcasts</h1>
+				<a class="feedsbutton addbutton" id="addfeedlabel" onclick="javascript:showPopup();">Ajouter un flux</a>
+				<div class="addfeed" id="addFeedBox" style="display:none;">
+					<a onclick="javascript:jQuery('#addFeedBox').fadeOut('slow');" style="cursor:pointer;float:right;"><img src="images/close.gif" /></a>
+					<span id="feedurllabel">URL du flux</span><br />
+					<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="addRSS();">OK</button>
+				</div>
+				<br /><br />
+				<div id="podcasts"></div>
+			</div>
+			<div class="spacer"></div>
 		</div>
-		<div class="addfeed" id="addFeedBox" style="display:none;">
-			<img src="images/close.gif" style="float:right;" onclick="javascript:jQuery('#addFeedBox')[0].hide('slow');" style="cursor:pointer;" />
-			URL du flux :<br />
-			<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="addRSS();">OK</button>
+		<div class="footer">
+			ChromeCast by <a href="http://binomed.fr/">Binomed</a>
 		</div>
+		<script type="text/javascript">
+			jQuery('#addfeedlabel')[0].innerHTML = chrome.i18n.getMessage("addFeed");
+			jQuery('#listlabel')[0].innerHTML = chrome.i18n.getMessage("podcastList");
+			jQuery("#feedurllabel")[0].innerHTML = chrome.i18n.getMessage("feedURL");
+		</script>
 	</body>
 </html>

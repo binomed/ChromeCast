@@ -51,6 +51,7 @@
 	    var idPlaying = function() { return idplaying; }
         var numPlaying = function() { return numplaying; }
 		var getVolume = function() { return player.volume; }
+		var setVolume = function(vol) { player.volume = vol; }
 		var getCurFeed = function() { return curFeed; }
 		var getCurPod = function() { return curPod; }
         
@@ -147,8 +148,9 @@
 				podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
 				podcast.subtitle = items[i].getElementsByTagName('subtitle')[0].childNodes[0].nodeValue;
 				podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
-
-				podcasts.push(podcast);
+				
+				if(podcast.url != "") 
+					podcasts.push(podcast);
 			}
 
 			meta.podcasts = podcasts;
@@ -253,8 +255,8 @@
       	function stopAction() {
 			player.pause();		
 			player.src = "";
-			curFeed = 0;
-			curPod = -1;
+			curFeed = "";
+			curPod = "";
 			stopplaying();
       	}
         
@@ -300,8 +302,7 @@
 					blntrouvefeeds = true;
 				}
 			}
-
-			if (blntrouve) { popupview.displayPlaying(); } 
+			if (blntrouve) { popupview.displayPlaying(); }
 			if (blntrouvefeeds) { feedsview.displayPlaying(); } 
         }
         
@@ -366,21 +367,32 @@
 			if(xml.getElementsByTagName('image')[0].getElementsByTagName('url').length > 0) {
 				feeds[num].img = xml.getElementsByTagName('image')[0].getElementsByTagName('url')[0].childNodes[0].nodeValue;        
 			} else {
-				feeds[num].img = "";
+				if(xml.getElementsByTagName('image').length > 0) {
+					feeds[num].img = xml.getElementsByTagName('image')[0].getAttribute("href");
+				} else {
+					feeds[num].img = "";
+				}
 			}
 
 			feeds[num].title = xml.getElementsByTagName('title')[0].childNodes[0].nodeValue;
 			feeds[num].subtitle = xml.getElementsByTagName('description')[0].childNodes[0].nodeValue;
+			feeds[num].link = xml.getElementsByTagName('link')[0].childNodes[0].nodeValue;
 
 			var podcasts = new Array();
 			for(i = 0; i < items.length; i++) {
 				var podcast = {};
 
-				podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
-				podcast.subtitle = items[i].getElementsByTagName('subtitle')[0].childNodes[0].nodeValue;
-				podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
-
-				podcasts.push(podcast);
+				if(items[i].getElementsByTagName('guid').length > 0)
+					podcast.guid = items[i].getElementsByTagName('guid')[0].childNodes[0].nodeValue;
+				
+				if(items[i].getElementsByTagName('title').length > 0)
+					podcast.subtitle = items[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
+				
+				
+				if(items[i].getElementsByTagName('enclosure').length > 0) {
+					podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
+					podcasts.push(podcast);
+				}
 			}
 
 			feeds[num].podcasts = podcasts;
@@ -400,8 +412,11 @@
 				}
 			}
 
-			if(blntrouve) { popupview.affiche(); }        
+			//if(blntrouve) { popupview.affiche(); }        
         }
+		
+		
+		
 		</script>
 	</head>
 	<body onload="loadpage();">

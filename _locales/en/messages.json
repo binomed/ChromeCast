@@ -7,6 +7,24 @@
     "message":"Feed URL :",
     "description":"Feed URL"
   },
+  "addFeed":{
+    "message":"Add a feed",
+    "description":"Add a feed"
+  },
+  "podcastList":{
+    "message":"Podcast List",
+    "description":"Podcast List"
+  },
+  "delFeed":{
+    "message":"Do you want to delete the feed $FEED$ ?",
+    "description":"Delete message",
+	"placeholders": {
+      "feed": {
+        "content": "$1",
+        "example": "Feed name"
+      }
+    }
+  },
   "welcomeMsg":{
     "message":"Welcome to ChromeCast",
     "description":"Welcome message"

@@ -24,7 +24,18 @@
   src: local('Ericsson'), url('../fonts/EHSMB.TTF') format('truetype');
 }
 
-body { font-family:"Arial","Sans-serif"; font-size:10px; overflow-x:hidden; }
+@font-face {
+  font-family: 'Alte Haas Grotesk Bold';
+  font-style: normal;
+  font-weight: normal;
+	src: local('Alte Haas Grotesk Bold'), url('../fonts/AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+body { font-family:"Arial","Sans-serif"; font-size:10px; overflow-x:hidden; padding:0px; }
+.bodycont {background-color:#ffffff; margin-top:-10px; padding-top:10px;}
+.spacer { background-color:#ffffff; height:50px; }
+
+.footer { padding:20px; font-size:12px; text-align:center; font-weight:bold;}
 
 #nowplaying { 
 	font-family:'Courier', 'Courier New'; 
@@ -62,12 +73,13 @@ td.playbutton { width:30px; }
 .even { background-color:#ffffff; } 
 .playing { background-color:#224C77; color:White; font-weight:bold; }
 
-h1 {font-family: 'Yanone Kaffeesatz', arial, serif; font-size:35px;}
+h1 {font-family: 'Alte Haas Grotesk Bold', arial, serif; font-size:35px;}
+h3 {font-family: 'Alte Haas Grotesk Bold', arial, serif; font-size:21px;}
 
 .del_feed { cursor:pointer; }
 
 a {color:#000000; font-weight:bold; text-decoration:none; font-size:13px;}
-a:hover, .feedsbutton:hover {color:#224C77; }
+a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; }
 
 .feedsbutton { 
 	text-decoration:none;
@@ -94,21 +106,63 @@ a:hover, .feedsbutton:hover {color:#224C77; }
 	cursor:pointer;
 }
 
+.playbuttonclick { 
+	text-decoration:none;
+	font-weight:normal;
+	padding:2 10 2 10; 
+	background-color:#ebebeb;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.16, rgb(209,209,209)),
+		color-stop(0.58, rgb(240,240,240))
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		rgb(209,209,209) 16%,
+		rgb(240,240,240) 58%
+	);
+	border:1px solid #A5A5A5;
+	cursor:pointer;
+}
+
+#volumebar { margin-left:20px; cursor: pointer; }
+
+.volumelevel {
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.33, #011950),
+		color-stop(0.84, #96A0B7)
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		#011950 33%,
+		#96A0B7 84%
+	);
+}
+
 .addfeed {
 	border:1px solid #A5A5A5;
 	width:350px;
 	padding:5px;
 	position:absolute;
-	top:80px;
-	left:10px;
+	margin-left:5px;
+	margin-top:10px;
 	background-color:white;
 	z-index:101;
 }
 
 .addbutton { margin-left:20px;}
-
 .title { margin-left:10px; margin-top: 10px;}
-
 .del_podcast { text-align:right;}
+
+.popup_title { text-align:center; width:100%; }
 
 
