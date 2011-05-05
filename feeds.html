@@ -125,11 +125,15 @@
 			if(feed != "") {
 				if(isUrl(feed)) {                        
 					bg.addFeed(feed);                   
-					location.reload(true);
+					setTimeout("reloadPage()", 2000);
 				} else {
 					alert("Mauvais format URL");
 				}
 			}
+		}
+		
+		function reloadPage() {
+			location.reload(true);
 		}
 
 		/**

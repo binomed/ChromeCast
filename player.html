@@ -195,7 +195,7 @@
 			console.log("Podcast " + numfeed + ", " + numpodcast + " : number " + feeds[numfeed].podcasts.length);
 			numplaying  = parseInt(numpodcast)+1;
 
-			if(podcast.subtitle != nowplaying) {                
+			if(parseInt(curFeed) != parseInt(numfeed) || parseInt(curPod) != parseInt(numpodcast)) {                
 				player.src = podcast.url;
 				player.load();
 				nowplaying = podcast.subtitle;
@@ -395,10 +395,15 @@
 				if(items[i].getElementsByTagName('title').length > 0)
 					podcast.subtitle = items[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
 				
-				
 				if(items[i].getElementsByTagName('enclosure').length > 0) {
 					podcast.url = items[i].getElementsByTagName('enclosure')[0].getAttribute("url");
 					podcasts.push(podcast);
+					
+				if(items[i].getElementsByTagName('description').length > 0) {
+					podcast.desc = items[i].getElementsByTagName('description')[0].childNodes[0].nodeValue;
+				} else {
+					podcast.desc = "";
+				}
 				}
 			}
 
