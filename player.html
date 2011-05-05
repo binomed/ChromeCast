@@ -376,7 +376,14 @@
 
 			feeds[num].title = xml.getElementsByTagName('title')[0].childNodes[0].nodeValue;
 			feeds[num].subtitle = xml.getElementsByTagName('description')[0].childNodes[0].nodeValue;
-			feeds[num].link = xml.getElementsByTagName('link')[0].childNodes[0].nodeValue;
+			
+			if(xml.getElementsByTagName('link').length > 0) {
+				if(xml.getElementsByTagName('link')[0].childNodes.length > 0) {
+					feeds[num].link = xml.getElementsByTagName('link')[0].childNodes[0].nodeValue;
+				} else {
+					feeds[num].link = xml.getElementsByTagName('link')[0].getAttribute("href");
+				}
+			}
 
 			var podcasts = new Array();
 			for(i = 0; i < items.length; i++) {
