@@ -1,118 +1,26 @@
 <html>
 	<head>
-		<script type="text/javascript" src="js/prototype.js"></script>
-		<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
-		<link type="text/css" media="screen" rel="stylesheet" href="css/chromecast.css" charset="utf-8" /> 
-		<script type="text/javascript">
-		/*  This file is part of ChromeCast (Chrome Extension)
-		Copyright (C) 2010 Binomed (binomed.team@gmail.com) 
-
-		This library is free software; you can redistribute it and/or 
-		modify it under the terms of the GNU Library General Public 
-		License as published by the Free Software Foundation; version 2 
-		of the License. 
-
-		This library is distributed in the hope that it will be useful, 
-		but WITHOUT ANY WARRANTY; without even the implied warranty of 
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
-		Library General Public License for more details. 
-
-		You should have received a copy of the GNU Library General Public License 
-		along with this library; see the file COPYING.LIB.  If not, write to 
-		the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
-		Boston, MA 02110-1301, USA. 
-		*/ 
-		
-		jQuery.noConflict();
-		
-		var bg = chrome.extension.getBackgroundPage();
-                 
-		var playing = false;
-		var player = $("idplayer");
-
-		var data = {};     
-
-		function ouvreFeeds() {
-			chrome.tabs.create({url:"feeds.html"});
-		}
-
-		function affiche() {
-			if(bg.isPlaying()) {
-				$('nowplaying').innerText = bg.titlePlaying();
-				$('imgplaypause').src = 'images/pause.png';
-			}
-			
-			setVolume();
-		}
-
-		function nextPodcast() { bg.playNext(); }
-		function prevPodcast() { bg.playPrevious(); }
-
-		function displayPlaying() {
-			if(bg.isPlaying()) {
-				$('nowplaying').innerText = bg.titlePlaying();
-				$('imgplaypause').src = 'images/pause.png';
-			}
-		}
-
-		function togglePlayPause() {
-			if(bg.nowplaying != "") {
-				bg.togglePlay();
-				if (bg.playing) { $('imgplaypause').src = 'images/pause.png'; } 
-				else { $('imgplaypause').src = 'images/play.png'; }
-			} 
-		}
-
-		function stopAction() { bg.stopAction(); }
-
-		//function pause() { $('nowplaying').innerText = ""; }
-		
-		function stopplaying() { 
-			$('nowplaying').innerHTML = "<span style='font-style:italic;'>Chromecast</span>"; 
-			$('imgplaypause').src = 'images/play.png';
-		}
-
-		function playerror(code) { 
-			$('nowplaying').innerText = "ERROR : Unable to read source"; 
-			$('imgplaypause').src = 'images/play.png';
-			stopAction();			
-		}
-		
-		</script>
+		<link type="text/css" media="screen" rel="stylesheet" href="css/chromecast-player.css" charset="utf-8" /> 
+		<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="js/popup_1.js"></script>
 	</head>
-	<body onload="affiche();">
+	<body>
 		<div class="popup_title">
-			<p style="text-align:center;float:right;"><a class="feedsbutton" href="javascript:ouvreFeeds();">Show feeds</a></p>
+			<p style="text-align:center;float:right;"><a class="feedsbutton" id="feedsButton" href="#">Show feeds</a></p>
 			<h2 style="padding-top:10px;"><img src="images/playerlogo.png" /></h2>
 		</div>
 		<div class="content">
-		<div id="nowplaying"><span style="font-style:italic;" id="welcome">&nbsp;</span></div>
-		<br />
-		<table>
-			<tr>
-				<td><div class="button" onclick="prevPodcast();"><img src="images/prev.png" /></div></td>
-				<td><div class="button" onclick="togglePlayPause();"><img id="imgplaypause" src="images/play.png" /></div></td>
-				<td><div class="button" onclick="stopAction();"><img src="images/stop.png" /></div></td>
-				<td><div class="button" onclick="nextPodcast();"><img src="images/next.png" /></div></td>
-				<td>
-					<div id="volumebar" style="border:1px solid #A5A5A5; width:100px;">
-						<div id="volumelevel" class="volumelevel" style="width:100%;background-color:lightgrey;">&nbsp;</div>
-					</div>
-				</td>
-			</tr>
-		</table>		
+			<div id="podcast-cover" style="position: relative; width:400px; height: 400px; background: url('images/morinade.jpg') center center; background-size: cover;">
+				<div style="background: rgba(0, 0, 0, 0.9); height:50px; width: 50px; position:absolute; bottom: 0px; cursor: pointer;">
+					<div class="playbtn" id="playbtn"></div>
+				</div>
+				<div style="background: rgba(100, 100, 100, 0.9); height:50px; width: 350px; position:absolute; bottom: 0px; left: 50px; color:white;">
+					<p class="title-playing" id="title-playing">ChromeCast</p>
+					<div class="subtitle-playing" id="subtitle-playing">The podcast player</div>
+				</div>
+				<div id="time-play" class="time-play">-- / --</div>
+			</div>
 		</div>
-		<script type="text/javascript">
-			jQuery('#volumebar').click(function(event) {
-				//alert("ok");
-				//console.log("KE : " + event.offsetX);
-				bg.setVolume(event.offsetX/100);
-				setVolume();
-			});
-			
-			function setVolume() {
-				$("volumelevel").style.width = bg.getVolume()*100 + "%";
-			}
-		</script>
+		<script type="text/javascript" src="js/popup_2.js"></script>
 	</body>
 </html>

@@ -1,207 +1,44 @@
 <html>
 	<head>
 		<title>ChromeCast by Binomed - Podcasts</title>
-		<script type="text/javascript" src="js/prototype.js"></script>
-		<script type="text/javascript" src="js/jquery-1.6.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
 		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
 		<link type="text/css" media="screen" rel="stylesheet" href="css/chromecast.css" charset="utf-8" />          
-		<script type="text/javascript">
-
-		/*  This file is part of ChromeCast (Chrome Extension)
-		Copyright (C) 2010 Binomed (binomed.team@gmail.com) 
-
-		This library is free software; you can redistribute it and/or 
-		modify it under the terms of the GNU Library General Public 
-		License as published by the Free Software Foundation; version 2 
-		of the License. 
-
-		This library is distributed in the hope that it will be useful, 
-		but WITHOUT ANY WARRANTY; without even the implied warranty of 
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
-		Library General Public License for more details. 
-
-		You should have received a copy of the GNU Library General Public License 
-		along with this library; see the file COPYING.LIB.  If not, write to 
-		the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
-		Boston, MA 02110-1301, USA. 
-		*/ 
-		
-		jQuery.noConflict();
-
-		var bg = chrome.extension.getBackgroundPage();
-
-		var playing = false;
-		var player = $("idplayer");
-
-		//var data = {};     
-		var feeds = {};
-
-		/**
-		* Fonction qui vérifie la formation d'une URL
-		*/             
-		function isUrl(s) {
-			var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-			return regexp.test(s);
-		}
-
-		/**
-		* Fonction qui affiche les feeds
-		*/             
-		function affiche() {
-			//data = bg.getPodcasts();
-			feeds = bg.getFeeds();
-
-			$('podcasts').innerHTML = "";
-			for(i = 0; i < feeds.length; i++) {
-
-				var metaTab =  new Element("table", {'class':'meta', 'width':'100%'});
-				var metaTrElt   = new Element("tr");
-
-				var metaTdImg   = new Element("td", {'class':'img_podcast_td', 'width':'70px'});
-				var metaTdTitle = new Element("td", {'class':'meta_podcast'});
-				var metaTdDel   = new Element("td", {'class':'del_podcast', 'align':'right'});
-
-				var imgPC = new Element("img", {'src':feeds[i].img, 'class':'img_podcast'});
-				metaTdImg.appendChild(imgPC);
-
-				var title = new Element("a", {'href':feeds[i].link}).update("<h3>" + feeds[i].title + "</h3>");
-				var subtitle = new Element("p").update(feeds[i].subtitle);
-				metaTdTitle.appendChild(title);
-				metaTdTitle.appendChild(subtitle);
-				
-				var imgDel = new Element("img", {'src':'images/delete.png', 'class':'del_feed', 'onclick':'javascript:delFeed("'+feeds[i].url+'")'});
-				metaTdDel.appendChild(imgDel);
-
-				metaTrElt.appendChild(metaTdImg);
-				metaTrElt.appendChild(metaTdTitle);
-				metaTrElt.appendChild(metaTdDel);
-
-				metaTab.appendChild(metaTrElt); 
-
-				$('podcasts').appendChild(metaTab);   
-
-				var tableElt = new Element("table", {'class':'results'});
-
-				for(j = 0; j < feeds[i].podcasts.length; j++) {
-					var podcast = {};
-
-					var trElt = new Element("tr");
-
-					// Titre
-					var tdTitre = new Element("td", {'class':'podname', 'id':feeds[i].podcasts[j].guid}).update(feeds[i].podcasts[j].subtitle);
-					var tdURL = new Element("td", {'class':'playbutton'});
-
-					var button = new Element("button", {'class':'playbuttonclick','idplay':''+j,'onclick':'play("'+i+'", "'+j+'")'}).update("Play");
-
-					tdURL.appendChild(button);
-
-					if(j%2 == 0) {
-						tdTitre.addClassName('odd');
-						tdURL.addClassName('odd');
-					} else {
-						tdTitre.addClassName('even');
-						tdURL.addClassName('even');
-					}
-
-					trElt.appendChild(tdTitre);
-					trElt.appendChild(tdURL);
-					tableElt.appendChild(trElt);         
-				}
-									   
-				$('podcasts').appendChild(tableElt); 
-				//$('podcasts').appendChild(new Element("hr"));
-			}
-			
-			displayPlaying();
-		}
-
-		/**
-		* Fonction qui ajoute un feed
-		*/                
-		function addRSS() {
-			var feed = $('idUrlPodcast').value;
-
-			if(feed != "") {
-				if(isUrl(feed)) {                        
-					bg.addFeed(feed);                   
-					location.reload(true);
-				} else {
-					alert("Mauvais format URL");
-				}
-			}
-		}
-
-		/**
-		* Fonction de suppression d'un feed
-		*/             
-		function delFeed(url) {
-			if(confirm(chrome.i18n.getMessage("delFeed", bg.getTitleByUrl(url)))) {
-				bg.delFeed(url);
-				location.reload(true);
-			}
-		}
-
-		/**
-		* Fonction qui joue un feed
-		*/             
-		function play(fed, num) {
-			bg.togglePlayPodcast(fed, num);
-			displayPlaying();
-		}
-		
-		function displayPlaying() {
-			arrayPodcasts = $$('#podcasts tr');
-		
-			for(i = 0; i < arrayPodcasts.length; i++) {
-				arrayTds = arrayPodcasts[i].getElementsByTagName("td");
-				arrayTds[0].removeClassName('playing');
-				arrayTds[1].removeClassName('playing');
-			}
-		
-			if(bg.isPlaying()) {
-				var fed = bg.getCurFeed();
-				var num = bg.getCurPod();
-							
-				var nump1 = parseInt(num) + 1;
-				var fedp1 = parseInt(fed) + 1;
-				
-				arrayPodcasts = $$('#podcasts .results:nth-of-type('+fedp1+') tr');
-				arrayTds = arrayPodcasts[num].getElementsByTagName("td");
-				arrayTds[0].addClassName('playing');
-				arrayTds[1].addClassName('playing'); 
-			}
-		}
-		
-		function showPopup() {
-			jQuery('#addFeedBox').fadeIn('slow');
-		}
-					
-		</script>
+		<script type="text/javascript" src="js/feeds_1.js"></script>
+		<meta charset="utf-8">
 	</head>
-	<body onload="affiche();">
+	<body>
 		<div class="bodycont">
-			<div class="logo"></div>
+			<!-- <div class="logo"></div> -->
 			<div class="content">
-				<h1 class="title" id="listlabel">Liste des podcasts</h1>
-				<a class="feedsbutton addbutton" id="addfeedlabel" onclick="javascript:showPopup();">Ajouter un flux</a>
+				<div class="title" id="listlabel" style="display:inline-block;">Podcasts</div>
+				<div id="addfeedlabel" style="width:40px; height:40px; background: url('images/plus.png');background-size: cover; display: inline-block; position:absolute; top: 15px; margin-left: 10px; cursor: pointer;">&nbsp;</div>
 				<div class="addfeed" id="addFeedBox" style="display:none;">
-					<a onclick="javascript:jQuery('#addFeedBox').fadeOut('slow');" style="cursor:pointer;float:right;"><img src="images/close.gif" /></a>
+					<a id="closeURL" style="cursor:pointer;float:right;"><img src="images/close.gif" /></a>
 					<span id="feedurllabel">URL du flux</span><br />
-					<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL" onclick="addRSS();">OK</button>
+					<span id="feedurl">&nbsp;</span> <input size="40" type="text" name="naUrlPodcast" id="idUrlPodcast" /> <button id="validURL">OK</button>
 				</div>
 				<br /><br />
-				<div id="podcasts"></div>
 			</div>
-			<div class="spacer"></div>
+		</div>
+		<div class="sidebar" id="sidebar" style="background-color:lightblue; width: 300px; height:calc(100% - 71px); float: left; overflow-y:auto;">
+		</div>
+		<div class="contenu" style="background-color:#ffffff; width: calc(100% - 300px); height:calc(100% - 71px); float: right; overflow-y:auto;">
+			<table class="table-podcasts" id="table-podcasts">
+				<thead>
+					<tr>
+						<th>Podcast</th>
+						<th style="width:100px;">Durée</th>
+						<th style="width:100px;">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>	
+			</table>	
 		</div>
 		<div class="footer">
 			ChromeCast by <a href="http://binomed.fr/">Binomed</a>
 		</div>
-		<script type="text/javascript">
-			jQuery('#addfeedlabel')[0].innerHTML = chrome.i18n.getMessage("addFeed");
-			jQuery('#listlabel')[0].innerHTML = chrome.i18n.getMessage("podcastList");
-			jQuery("#feedurllabel")[0].innerHTML = chrome.i18n.getMessage("feedURL");
-		</script>
+		<script type="text/javascript" src="js/feeds_2.js"></script>
 	</body>
 </html>
