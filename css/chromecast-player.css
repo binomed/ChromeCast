@@ -1,0 +1,54 @@
+/*  This file is part of ChromeCast (Chrome Extension)
+	Copyright (C) 2010 Binomed (binomed.team@gmail.com) 
+
+	This library is free software; you can redistribute it and/or 
+	modify it under the terms of the GNU Library General Public 
+	License as published by the Free Software Foundation; version 2 
+	of the License. 
+
+	This library is distributed in the hope that it will be useful, 
+	but WITHOUT ANY WARRANTY; without even the implied warranty of 
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+	Library General Public License for more details. 
+
+	You should have received a copy of the GNU Library General Public License 
+	along with this library; see the file COPYING.LIB.  If not, write to 
+	the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+	Boston, MA 02110-1301, USA. 
+	*/ 
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Roboto'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: bold;
+	src: local('Roboto'), url('../fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk Bold';
+  font-style: normal;
+  font-weight: normal;
+	src: local('Alte Haas Grotesk Bold'), url('../fonts/AlteHaasGroteskBold.ttf') format('truetype');
+}
+
+body { font-family:'Roboto',"Arial","Sans-serif"; font-size:10px; overflow:hidden; padding:0px; }
+.bodycont {background-color:black; color:white; margin-top:-10px; padding-top:10px;}
+.spacer { background-color:#ffffff; height:50px; }
+
+.footer { position:absolute; bottom:0px; padding:20px; font-size:12px; text-align:center; font-weight:bold;}
+
+.playbtn { width: 50px; height: 50px; background: url('../images/playpause.png'); background-position: 0px 0px; transition-property: background-position-y; transition-duration: 0.5s; cursor: pointer; }
+
+.title-playing { font-weight: bold; margin-left: 10px; font-size: 15px; margin-top:8px; margin-bottom: 5px; width: 200px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
+.subtitle-playing { line-height: 10px; margin-left: 10px; margin-top:0px; width: 200px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
+
+.playing { background-position-y : 50px; }
+
+.time-play { position: absolute; bottom: 0px; right: 10px; color: white; line-height:50px;}

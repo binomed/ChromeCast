@@ -1,0 +1,748 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:itunes="http://www.itunes.com/DTDs/Podcast-1.0.dtd" version="2.0">
+<channel>
+	<title>RMC : Les Grandes Gueules</title>
+	<itunes:author>RMC</itunes:author>
+	<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+	<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+	<language>fr</language>
+	<copyright>RMC 2010</copyright>
+	<managingEditor>lewebmaster@rmcinfo.fr (RMC)</managingEditor>
+	<webMaster>lewebmaster@rmcinfo.fr (RMC)</webMaster>
+	<pubDate>Fri, 23 Sep 2005 00:00:00 +0200</pubDate>
+	<lastBuildDate>Thu, 14 Apr 2011 16:25:23 +0200</lastBuildDate>
+	<category>Talk Radio</category>
+	<generator>Streamakaci</generator>
+	<ttl>1500</ttl>
+	<image>
+		<url>http://podcast.rmc.fr/images/podcast_grandesgueulespng_20120315141337.png</url>
+		<title>RMC : Les Grandes Gueules</title>
+		<link>http://www.rmc.fr</link>
+		<width>150</width>
+		<height>150</height>
+	</image>
+	<itunes:image href="http://podcast.rmc.fr/images/podcast_grandesgueulespng_20120315141337.png"/>
+	<item>
+		<title>RMC : 07/05 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130507_gg_3.mp3" length="21659289" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130507_gg_3.mp3</guid>
+		<pubDate>Tue, 07 May 2013 14:20:29 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 07/05 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>45:07</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 07/05 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130507_gg_2.mp3" length="22722160" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130507_gg_2.mp3</guid>
+		<pubDate>Tue, 07 May 2013 12:45:08 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 07/05 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:20</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 07/05 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130507_gg_1.mp3" length="23468426" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130507_gg_1.mp3</guid>
+		<pubDate>Tue, 07 May 2013 11:27:14 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 07/05 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>48:53</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 06/05 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130506_gg_3.mp3" length="21125974" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130506_gg_3.mp3</guid>
+		<pubDate>Mon, 06 May 2013 13:43:34 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 06/05 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>44:00</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 06/05 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130506_gg_2.mp3" length="22942424" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130506_gg_2.mp3</guid>
+		<pubDate>Mon, 06 May 2013 12:14:16 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 06/05 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:47</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 06/05 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130506_gg_1.mp3" length="23136984" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130506_gg_1.mp3</guid>
+		<pubDate>Mon, 06 May 2013 11:10:28 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 06/05 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>48:12</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 03/05 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130503_gg_3.mp3" length="18996889" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130503_gg_3.mp3</guid>
+		<pubDate>Fri, 03 May 2013 14:46:37 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 03/05 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>39:34</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 03/05 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130503_gg_2.mp3" length="22016018" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130503_gg_2.mp3</guid>
+		<pubDate>Fri, 03 May 2013 12:19:42 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 03/05 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>45:52</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 03/05 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130503_gg_1.mp3" length="21929709" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130503_gg_1.mp3</guid>
+		<pubDate>Fri, 03 May 2013 11:08:53 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 03/05 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>45:41</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 02/05 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130502_gg_3.mp3" length="20573641" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130502_gg_3.mp3</guid>
+		<pubDate>Thu, 02 May 2013 13:56:01 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 02/05 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>42:51</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 02/05 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130502_gg_2.mp3" length="22870535" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130502_gg_2.mp3</guid>
+		<pubDate>Thu, 02 May 2013 12:38:09 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 02/05 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:38</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 02/05 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130502_gg_1.mp3" length="23106264" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130502_gg_1.mp3</guid>
+		<pubDate>Thu, 02 May 2013 11:29:07 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 02/05 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>48:08</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 01/05 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130501_gg_3.mp3" length="21761689" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130501_gg_3.mp3</guid>
+		<pubDate>Wed, 01 May 2013 14:04:11 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 01/05 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>45:20</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 01/05 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130501_gg_2.mp3" length="25473376" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130501_gg_2.mp3</guid>
+		<pubDate>Wed, 01 May 2013 12:47:31 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 01/05 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>53:04</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 01/05 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130501_gg_1.mp3" length="23811152" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130501_gg_1.mp3</guid>
+		<pubDate>Wed, 01 May 2013 12:43:59 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 01/05 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>49:36</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 30/04 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130430_gg_3.mp3" length="20387440" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130430_gg_3.mp3</guid>
+		<pubDate>Tue, 30 Apr 2013 13:44:13 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 30/04 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>42:28</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 30/04 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130430_gg_2.mp3" length="22918809" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130430_gg_2.mp3</guid>
+		<pubDate>Tue, 30 Apr 2013 12:21:56 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 30/04 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:44</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 30/04 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130430_gg_1.mp3" length="22874297" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130430_gg_1.mp3</guid>
+		<pubDate>Tue, 30 Apr 2013 11:22:56 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 30/04 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:39</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 29/04 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130429_gg_3.mp3" length="19376814" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130429_gg_3.mp3</guid>
+		<pubDate>Mon, 29 Apr 2013 13:38:25 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 29/04 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>40:22</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 29/04 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130429_gg_2.mp3" length="22833337" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130429_gg_2.mp3</guid>
+		<pubDate>Mon, 29 Apr 2013 12:33:56 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 29/04 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>47:34</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 29/04 - Les Grandes Gueules - 10h - 11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130429_gg_1.mp3" length="23042316" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130429_gg_1.mp3</guid>
+		<pubDate>Mon, 29 Apr 2013 11:13:26 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 29/04 - Les Grandes Gueules - 10h - 11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>48:00</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 26/04 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130426_gg_3.mp3" length="19183717" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130426_gg_3.mp3</guid>
+		<pubDate>Fri, 26 Apr 2013 14:09:23 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 26/04 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>39:57</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 26/04 - Les Grandes Gueules - 11h - 12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130426_gg_2.mp3" length="20661621" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130426_gg_2.mp3</guid>
+		<pubDate>Fri, 26 Apr 2013 12:14:40 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 26/04 - Les Grandes Gueules - 11h - 12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>43:02</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 26/04 - Les Grandes Gueules - 10h -11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130426_gg_1.mp3" length="19895293" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130426_gg_1.mp3</guid>
+		<pubDate>Fri, 26 Apr 2013 11:11:28 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 26/04 - Les Grandes Gueules - 10h -11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>41:26</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 25/04 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130425_gg_3.mp3" length="20478764" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130425_gg_3.mp3</guid>
+		<pubDate>Thu, 25 Apr 2013 13:50:10 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 25/04 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>42:39</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 25/04 - Les Grandes Gueules - 11h-12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130425_gg_2.mp3" length="22551423" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130425_gg_2.mp3</guid>
+		<pubDate>Thu, 25 Apr 2013 13:28:12 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 25/04 - Les Grandes Gueules - 11h-12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>46:58</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 25/04 - Les Grandes Gueules - 10h-11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130425_gg_1.mp3" length="24083871" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130425_gg_1.mp3</guid>
+		<pubDate>Thu, 25 Apr 2013 13:25:32 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 25/04 - Les Grandes Gueules - 10h-11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>50:10</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 24/04 - Les Grandes Gueules - 12h-13h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130424_gg_3.mp3" length="20775515" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130424_gg_3.mp3</guid>
+		<pubDate>Wed, 24 Apr 2013 13:21:40 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 24/04 - Les Grandes Gueules - 12h-13h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>43:16</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 24/04 - Les Grandes Gueules - 11h - 12h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130424_gg_2.mp3" length="22090832" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130424_gg_2.mp3</guid>
+		<pubDate>Wed, 24 Apr 2013 11:58:42 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 24/04 - Les Grandes Gueules - 11h - 12h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>46:01</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+	<item>
+		<title>RMC : 24/04 - Les Grandes Gueules - 10h - 11h</title>
+		<link>http://www.rmc.fr/podcast/podcast.php?id=36</link>
+		<description>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</description>
+		<author>RMC</author>
+		<category>Talk Radio</category>
+		<enclosure url="http://podcast.rmc.fr/channel36/20130424_gg_1.mp3" length="23678241" type="audio/mpeg"/>
+		<guid>http://podcast.rmc.fr/channel36/20130424_gg_1.mp3</guid>
+		<pubDate>Wed, 24 Apr 2013 10:53:21 +0200</pubDate>
+		<source url="http://podcast.rmc.fr/channel36/RMCInfochannel36.xml">RMC : 24/04 - Les Grandes Gueules - 10h - 11h</source>
+		<itunes:category text="Talk Radio">
+			<itunes:category text=""></itunes:category>
+		</itunes:category>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:subtitle>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:subtitle>
+		<itunes:summary>Marschall et Olivier Truchot pour un show de 3 heures avec leur invité, où actualité rime avec liberté de ton</itunes:summary>
+		<itunes:author>RMC</itunes:author>
+		<itunes:duration>49:19</itunes:duration>
+		<itunes:keywords> grandes,gueules,marschall,truchot</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>RMC</itunes:name>
+			<itunes:email>lewebmaster@rmcinfo.fr</itunes:email>
+		</itunes:owner>
+	</item>
+</channel>
+
+</rss>
