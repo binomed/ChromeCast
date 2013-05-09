@@ -455,7 +455,7 @@ function loadPodcasts(num, xml) {
 }
 
 function updateProgress() {
-	var viewPopupUrl = chrome.extension.getURL('popup.html');	
+	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
 	var views = chrome.extension.getViews();	
 
 	curTime = player.currentTime;
@@ -473,6 +473,11 @@ function updateProgress() {
 	if (blntrouve) {
 		popupview.updateProgress();
 	}
+}
+
+function setTime(ti) {
+	player.currentTime = ti;
+	updateProgress();
 }
 
 window.addEventListener("load", loadpage);

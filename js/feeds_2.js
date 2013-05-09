@@ -75,7 +75,7 @@ function affichePods() {
 	var curFeed = bg.getCurFeed();
 	var isPlaying = bg.isPlaying();
 
-	if(isPlaying) {
+	if(curFeed != undefined) {
 		affichePodcasts(curFeed);
 	}
 }	
@@ -152,4 +152,43 @@ function displayPlaying() {
 		if(bg.isPlaying())
 			$("#table-podcasts tbody tr:nth-of-type("+(curPod+1)+") .table-podcasts-actions-ply").addClass("podcast-playing");
 	} 
+
+	if(curFeed != undefined) {
+		$("#title-playing").html(feeds[curFeed].podcasts[curPod].title);
+		$("#subtitle-playing").html(feeds[curFeed].podcasts[curPod].subtitle);
+
+		$("#player-cover").css("background", "url('" + feeds[curFeed].img + "')");
+		$("#player-cover").css("background-size", "cover");
+		$("#player-cover").css("background-position", "center center");
+
+		updateProgress();
+	}
 }
+
+function updateProgress() {
+	var curTime = bg.getCurTime();
+	var curDuration = bg.getCurDuration();
+	var progress = curTime / curDuration;
+
+	var textPlayed = formatSeconds(Math.round(Math.round(curTime)/60)) + ":" + formatSeconds(Math.round(curTime)%60);
+	var textDuration = formatSeconds(Math.round(Math.round(curDuration)/60)) + ":" + formatSeconds(Math.round(curDuration)%60);
+
+	$("#progress-text").html(textPlayed + " / " + textDuration);
+	$("#progress-playing").css("width", (progress * 400) + "px");
+}
+
+function formatSeconds(txt) {
+	if(txt < 10) 
+		return "0"+txt;
+	else
+		return txt;
+}
+
+function updateTime(ti) {
+	var curDuration = bg.getCurDuration();
+	var progress = ti / 400;
+
+	bg.setTime(progress * curDuration);
+}
+
+$('#player-title').on("click", function(event) { updateTime(event.offsetX);});
