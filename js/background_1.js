@@ -270,7 +270,7 @@ function playNext() {
 function playPrevious() { 
 	if(curPod == 0) {
 		if(curFeed == 0) {
-			togglePlayPodcast(feeds.length-1, feeds[curFeed].podcasts.length-1);
+			togglePlayPodcast(feeds.length-1, feeds[feeds.length-1].podcasts.length-1);
 		} else {
 			togglePlayPodcast(parseInt(curFeed)-1,feeds[curFeed-1].podcasts.length-1);
 		}

@@ -78,6 +78,20 @@ function affichePods() {
 	if(curFeed != undefined) {
 		affichePodcasts(curFeed);
 	}
+
+	$('body').keyup(function(e){
+	   if(e.keyCode == 32){
+	       // user has pressed space
+	       bg.togglePlay();
+	   }
+	   if(e.keyCode == 	75){
+	       bg.playNext(); // k
+	   }
+	   if(e.keyCode == 	74){
+	   		// k
+	       bg.playPrevious();
+	   }
+	});
 }	
 
 function affichePodcastsEvent(event) { 
