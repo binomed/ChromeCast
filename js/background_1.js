@@ -213,7 +213,7 @@ function togglePlayPodcast(numfeed, numpodcast) {
 	console.log("Podcast " + numfeed + ", " + numpodcast + " : number " + feeds[numfeed].podcasts.length);
 	numplaying  = parseInt(numpodcast)+1;
 
-	if(podcast.subtitle != nowplaying) {                
+	if(numfeed != curFeed || numpodcast != curPod) {                
 		player.src = podcast.url;
 		player.load();
 		nowplaying = podcast.subtitle;
