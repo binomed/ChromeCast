@@ -27,6 +27,8 @@ $("#addfeedlabel").on("click", function() { showPopup(); });
 $("#closeURL").on("click", function() { $('#addFeedBox').fadeOut('slow'); });
 $("#validURL").on("click", function() { addRSS(); });
 
+
+
 // $('#addfeedlabel')[0].innerHTML = chrome.i18n.getMessage("addFeed");
 $('#listlabel')[0].innerHTML 	= chrome.i18n.getMessage("podcastList");
 $("#feedurllabel")[0].innerHTML = chrome.i18n.getMessage("feedURL");
@@ -92,6 +94,10 @@ function affichePods() {
 	       bg.playPrevious();
 	   }
 	});
+
+	$("#player-rew").on("click", function(){ bg.playPrevious();});
+	$("#player-play").on("click", function(){ bg.togglePlay();});
+	$("#player-for").on("click", function(){ bg.playNext();});
 }	
 
 function affichePodcastsEvent(event) { 
@@ -176,6 +182,12 @@ function displayPlaying() {
 		$("#player-cover").css("background-position", "center center");
 
 		updateProgress();
+	}
+
+	if(isPlaying) {
+		$("#player-play").addClass("player-play-playing");
+	} else {
+		$("#player-play").removeClass("player-play-playing");
 	}
 }
 

@@ -70,6 +70,8 @@ var addFeed = function(feed) {
 	var obj = {"url":feed};                  
 	feeds.push(obj);
 
+	//console.log(feeds);
+
 	// On recharge les flux, et on sauvegarde
 	// les données
 	loadpage();
@@ -375,20 +377,43 @@ function loadpage() {
 	player.addEventListener("timeupdate", updateProgress);
 }
 
+function htmlizeAmps(s){
+  texte = s.replace(/\x26/g,"&amp;"); //globalreplace "&" (hex 26) with "&amp;"
+  texte1 = texte.replace('&amp;amp;','&amp;');
+
+  return texte1;
+
+}
+
 /**
  * Mise à jour des flux
  */                 
 function majFlux(numf) {
-	var xhr = new XMLHttpRequest();
+	/*var xhr = new XMLHttpRequest();
 	xhr.open("GET", feeds[numf].url, true);            
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4) {
 			// innerText does not let the attacker inject HTML elements.          
 			response = xhr.responseXML;
+			console.log(response);
 			loadPodcasts(numf, response);
 		}
 	}                                                                               
-	xhr.send();
+	xhr.send();*/
+	$.ajax({
+		url: feeds[numf].url,
+		dataType: "text",
+		success: function(data) {			
+			parser=new DOMParser();
+			txt = htmlizeAmps(data);
+  			xmlDoc=parser.parseFromString(txt,"text/xml");
+
+			loadPodcasts(numf, xmlDoc);
+		},
+		error: function(jqxhr, status, err) {
+			console.log(status);
+		}
+	});
 }
 
 /**
