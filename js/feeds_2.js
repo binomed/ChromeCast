@@ -227,7 +227,13 @@ function updateProgress() {
 	var progress = curTime / curDuration;
 
 	var textPlayed = formatSeconds(Math.floor(curTime/60)) + ":" + formatSeconds(Math.floor(curTime)%60);
-	var textDuration = formatSeconds(Math.floor(curDuration/60)) + ":" + formatSeconds(Math.floor(curDuration)%60);
+
+	if(!isNaN(curDuration)) {
+		var textDuration = formatSeconds(Math.floor(curDuration/60)) + ":" + formatSeconds(Math.floor(curDuration)%60);
+	} else {
+		var textDuration = "--";
+	}
+	
 
 	$("#progress-text").html(textPlayed + " / " + textDuration);
 	$("#progress-playing").css("width", (progress * 400) + "px");

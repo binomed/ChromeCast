@@ -177,6 +177,12 @@ function afficheUnread() {
  * Fonction Play/Pause
  */                           
 function togglePlay() {
+
+	if (curFeed == undefined) {
+		togglePlayPodcast(0,0);
+		return;
+	}
+
 	// Si le lecteur est en pause, alors on passe en "play"
 	if(player.paused) {
 		player.play();
