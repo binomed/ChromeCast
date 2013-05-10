@@ -27,16 +27,18 @@ $("#addfeedlabel").on("click", function() { showPopup(); });
 $("#closeURL").on("click", function() { $('#addFeedBox').fadeOut('slow'); });
 $("#validURL").on("click", function() { addRSS(); });
 
-
-
-// $('#addfeedlabel')[0].innerHTML = chrome.i18n.getMessage("addFeed");
 $('#listlabel')[0].innerHTML 	= chrome.i18n.getMessage("podcastList");
 $("#feedurllabel")[0].innerHTML = chrome.i18n.getMessage("feedURL");
 
 function showPopup() { $('#addFeedBox').fadeIn('slow'); }
+
 function isUrl(s) {
 	var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
 	return regexp.test(s); }
+
+/**
+ * Ajout d'un nouveau flux RSS
+ */
 function addRSS() {
 	var feed = $('#idUrlPodcast')[0].value;
 
@@ -50,14 +52,15 @@ function addRSS() {
 		}
 	} }
 
-
+/**
+ * Affichage des flux dans la sidebar et ajout des eventHandlers
+ */
 function affichePods() {
 	feeds = bg.getFeeds();
-	// console.log(feeds);
 
+	// On affiche la liste des flux dans la sidebar
 	for(numFeed = 0; numFeed < feeds.length; numFeed++) {
 
-		/** AJOUT DU FEED DANS LA SIDEBAR **/
 		var divSidebarFeed = $("<div />", {'class':'sidebar-feed'});
 
 		var divSidebarFeedImg = $("<div />", {'class':'sidebar-feed-img'});
@@ -77,10 +80,12 @@ function affichePods() {
 	var curFeed = bg.getCurFeed();
 	var isPlaying = bg.isPlaying();
 
+	// Si un podcast est en cours de lecture ou sélectionné, on l'affiche
 	if(curFeed != undefined) {
 		affichePodcasts(curFeed);
 	}
 
+	// Ajout des hotkeys du clavier
 	$('body').keyup(function(e){
 	   if(e.keyCode == 32){
 	       // user has pressed space
@@ -95,23 +100,32 @@ function affichePods() {
 	   }
 	});
 
+	// Ajout des eventHandlers sur les boutons du player
 	$("#player-rew").on("click", function(){ bg.playPrevious();});
 	$("#player-play").on("click", function(){ bg.togglePlay();});
 	$("#player-for").on("click", function(){ bg.playNext();});
 }	
 
+/**
+ * Affichage de la liste des podcasts lors du chargement de la page
+ */
 function affichePodcastsEvent(event) { 
 	affichePodcasts(event.data.numFeed);
 }
 
+/**
+ * Affichage de la liste des podcasts d'un flux
+ */
 function affichePodcasts(numFeed) {
+	// On vide l'affichage
 	$("#table-podcasts tbody").html("");
 	displayedFeed = numFeed;
 
+	// Dans la sidebar, on met en gras le flux sélectionné
 	$(".sidebar-feed-txt").removeClass('selected-feed');
 	$(".sidebar-feed:nth-of-type("+(numFeed+1)+") .sidebar-feed-txt").addClass('selected-feed');
 
-	/** AJOUT DES PODCASTS **/
+	// On ajoute les podcasts du flux
 	for(i = 0; i < feeds[numFeed].podcasts.length; i++) {
 		var trPod = $("<tr />");
 
@@ -133,9 +147,11 @@ function affichePodcasts(numFeed) {
 		tdDuration.appendTo(trPod);
 
 		var tdActions = $("<td />");
+		
 		var divDownload = $('<div />', {'class':'table-podcasts-actions-dwl'});
 		divDownload.html("&nbsp;");
 		divDownload.on('click', { numFeed: numFeed, numPod: i }, dwlPodcastEvent);
+
 		var divPlay = $('<div />', {'class':'table-podcasts-actions-ply'});
 		divPlay.html("&nbsp;");
 		divPlay.on('click', { numFeed: numFeed, numPod: i }, playPodcastEvent);
@@ -147,32 +163,42 @@ function affichePodcasts(numFeed) {
 		trPod.appendTo("#table-podcasts tbody");
 	}
 
+	// On affiche le podcast en cours de lecture le cas échéant
 	displayPlaying();
 }
 
+/**
+ * Lancement de la lecture d'un podcast
+ */
 function playPodcastEvent(event) {
-	console.log("Feed : " + event.data.numFeed);
-	console.log("Podcast : " + event.data.numPod);
-
 	bg.togglePlayPodcast(event.data.numFeed, event.data.numPod);
 }
 
+/**
+ * Lancement du téléchargement d'un podcast
+ */
 function dwlPodcastEvent(event) {
 	window.open(feeds[event.data.numFeed].podcasts[event.data.numPod].url);
 }
 
+/**
+ * Affichage du podcast en cours de lecture
+ */
 function displayPlaying() {
 	var curFeed = bg.getCurFeed();
 	var curPod = bg.getCurPod();
 	var isPlaying = bg.isPlaying();
 	
-	$(".podcast-playing").removeClass("podcast-playing");	
+	$(".podcast-playing").removeClass("podcast-playing");	// On retire la classe de lecture à l'ensemble des pods
 
+	// Si le feed affiché est celui en cours de lecture, on pourra donner au podcast en cours
+	// le classe adéquate
 	if(displayedFeed == curFeed) {
 		if(bg.isPlaying())
 			$("#table-podcasts tbody tr:nth-of-type("+(curPod+1)+") .table-podcasts-actions-ply").addClass("podcast-playing");
 	} 
 
+	// Si un podcast est sélectionné pour lecture
 	if(curFeed != undefined) {
 		$("#title-playing").html(feeds[curFeed].podcasts[curPod].title);
 		$("#subtitle-playing").html(feeds[curFeed].podcasts[curPod].subtitle);
@@ -184,6 +210,7 @@ function displayPlaying() {
 		updateProgress();
 	}
 
+	// Si la lecture est en cours, on affiche le bouton "pause", sinon on affiche le bouton "play"
 	if(isPlaying) {
 		$("#player-play").addClass("player-play-playing");
 	} else {
@@ -191,6 +218,9 @@ function displayPlaying() {
 	}
 }
 
+/**
+ * Mise à jour de la progression de lecture 
+ */
 function updateProgress() {
 	var curTime = bg.getCurTime();
 	var curDuration = bg.getCurDuration();
@@ -203,6 +233,9 @@ function updateProgress() {
 	$("#progress-playing").css("width", (progress * 400) + "px");
 }
 
+/**
+ * Fonction qui rajoute les 0 devant les chiffres inférieurs à 10
+ */
 function formatSeconds(txt) {
 	if(txt < 10) 
 		return "0"+txt;
@@ -210,6 +243,9 @@ function formatSeconds(txt) {
 		return txt;
 }
 
+/**
+ * Envoi de la nouvelle progression lors d'un clic sur la barre de progression
+ */
 function updateTime(ti) {
 	var curDuration = bg.getCurDuration();
 	var progress = ti / 400;
@@ -217,4 +253,5 @@ function updateTime(ti) {
 	bg.setTime(progress * curDuration);
 }
 
+// Ajout de l'eventHandler pour le clic sur la barre de progression
 $('#player-title').on("click", function(event) { updateTime(event.offsetX);});

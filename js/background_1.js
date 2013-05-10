@@ -70,12 +70,8 @@ var addFeed = function(feed) {
 	var obj = {"url":feed};                  
 	feeds.push(obj);
 
-	//console.log(feeds);
-
-	// On recharge les flux, et on sauvegarde
-	// les données
+	// On recharge les flux, et on sauvegarde les données
 	loadpage();
-	// saveFeeds(); 
 }
 
 /**
@@ -389,22 +385,12 @@ function htmlizeAmps(s){
  * Mise à jour des flux
  */                 
 function majFlux(numf) {
-	/*var xhr = new XMLHttpRequest();
-	xhr.open("GET", feeds[numf].url, true);            
-	xhr.onreadystatechange = function() {
-		if (xhr.readyState == 4) {
-			// innerText does not let the attacker inject HTML elements.          
-			response = xhr.responseXML;
-			console.log(response);
-			loadPodcasts(numf, response);
-		}
-	}                                                                               
-	xhr.send();*/
 	$.ajax({
 		url: feeds[numf].url,
 		dataType: "text",
 		success: function(data) {			
 			parser=new DOMParser();
+
 			txt = htmlizeAmps(data);
   			xmlDoc=parser.parseFromString(txt,"text/xml");
 
@@ -479,6 +465,9 @@ function loadPodcasts(num, xml) {
 	if(blntrouve) { console.log("ok"); popupview.location.reload(true); } else { console.log("ko");}       
 }
 
+/**
+ * Handler pour l'event de progression de la lecture (envoi à la page feeds.html)
+ */
 function updateProgress() {
 	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
 	var views = chrome.extension.getViews();	
@@ -500,6 +489,9 @@ function updateProgress() {
 	}
 }
 
+/**
+ * Controleur pour la progression de lecture
+ */
 function setTime(ti) {
 	player.currentTime = ti;
 	updateProgress();
