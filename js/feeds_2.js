@@ -196,8 +196,8 @@ function updateProgress() {
 	var curDuration = bg.getCurDuration();
 	var progress = curTime / curDuration;
 
-	var textPlayed = formatSeconds(Math.round(Math.round(curTime)/60)) + ":" + formatSeconds(Math.round(curTime)%60);
-	var textDuration = formatSeconds(Math.round(Math.round(curDuration)/60)) + ":" + formatSeconds(Math.round(curDuration)%60);
+	var textPlayed = formatSeconds(Math.floor(curTime/60)) + ":" + formatSeconds(Math.floor(curTime)%60);
+	var textDuration = formatSeconds(Math.floor(curDuration/60)) + ":" + formatSeconds(Math.floor(curDuration)%60);
 
 	$("#progress-text").html(textPlayed + " / " + textDuration);
 	$("#progress-playing").css("width", (progress * 400) + "px");
