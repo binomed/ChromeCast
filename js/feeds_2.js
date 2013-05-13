@@ -24,6 +24,8 @@ window.addEventListener("load", affichePods);
 var displayedFeed = "";
 
 $("#addfeedlabel").on("click", function() { showPopup(); });
+$("#refreshlabel").on("click", function() { bg.loadpage(); });
+
 $("#closeURL").on("click", function() { $('#addFeedBox').fadeOut('slow'); });
 $("#validURL").on("click", function() { addRSS(); });
 

@@ -380,7 +380,9 @@ function loadpage() {
 	player.addEventListener("error", function() {gotError();},true);
 	player.addEventListener("timeupdate", updateProgress);
 	player.addEventListener("waiting", function() {displayBuffer(true);});
+	player.addEventListener("seeking", function() {displayBuffer(true);});
 	player.addEventListener("playing", function() {displayBuffer(false);});
+	player.addEventListener("seeked", function() {displayBuffer(false);});
 }
 
 function htmlizeAmps(s){
@@ -452,8 +454,11 @@ function loadPodcasts(num, xml) {
 		if(items[i].getElementsByTagName('title').length > 0)
 			podcast.title = items[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
 			
-		if(items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','subtitle').length > 0)
-			podcast.subtitle = items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','subtitle')[0].childNodes[0].nodeValue;		
+		if(items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','subtitle').length > 0) {
+			podcast.subtitle = items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','subtitle')[0].childNodes[0].nodeValue;
+		} else {
+			podcast.subtitle = "";
+		}
 
 		if(items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','duration').length > 0)
 			podcast.duration = items[i].getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','duration')[0].childNodes[0].nodeValue;
@@ -481,7 +486,7 @@ function loadPodcasts(num, xml) {
 		}
 	}
 
-	if(blntrouve) { console.log("ok"); popupview.location.reload(true); } else { console.log("ko");}       
+	if(blntrouve) { popupview.location.reload(true); }
 }
 
 /**
@@ -537,6 +542,7 @@ function updateVol() {
  * Handler pour l'event de progression de la lecture (envoi à la page feeds.html)
  */
 function displayBuffer(bln) {
+	console.log("buffering : " + bln);
 	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
 	var views = chrome.extension.getViews();	
 

@@ -297,7 +297,6 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 	background-color: black;
 	width:0px;
 	opacity: 0.8;
-	transition-property: width; transition-duration: 0.5s;
 }
 
 .title-playing { position:absolute; font-weight: normal; margin-left: 10px; font-size: 15px; margin-top:0px; margin-bottom: 5px; width: 300px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
