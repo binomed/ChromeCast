@@ -15,6 +15,10 @@
     "message":"Podcast List",
     "description":"Podcast List"
   },
+  "buffering":{
+    "message":"buffering...",
+    "description":"Buffering Text"
+  },
   "delFeed":{
     "message":"Do you want to delete the feed $FEED$ ?",
     "description":"Delete message",

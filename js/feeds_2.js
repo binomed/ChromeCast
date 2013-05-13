@@ -52,6 +52,13 @@ function addRSS() {
 		}
 	} }
 
+function deleteFeed(event) {
+	// if(confirm("Êtes-vous sur de vouloir supprimer le flux " + feeds[event.data.numFeed].title + " ?")) {
+	if(confirm(chrome.i18n.getMessage("delFeed", [feeds[event.data.numFeed].title]))) {
+		bg.delFeed(event.data.numFeed);
+	}
+}
+
 /**
  * Affichage des flux dans la sidebar et ajout des eventHandlers
  */
@@ -73,6 +80,12 @@ function affichePods() {
 
 		divSidebarFeedImg.appendTo(divSidebarFeed);
 		divSidebarFeedTxt.appendTo(divSidebarFeed);
+
+		var divSidebarFeedDel = $("<div />", {'class':'sidebar-feed-del'});
+		divSidebarFeedDel.on('click', { numFeed: numFeed }, deleteFeed);
+		divSidebarFeedDel.html("&nbsp;");
+
+		divSidebarFeedDel.appendTo(divSidebarFeed);
 
 		divSidebarFeed.appendTo("#sidebar");
 	}
@@ -104,6 +117,9 @@ function affichePods() {
 	$("#player-rew").on("click", function(){ bg.playPrevious();});
 	$("#player-play").on("click", function(){ bg.togglePlay();});
 	$("#player-for").on("click", function(){ bg.playNext();});
+
+	// On affiche le volume actuel
+	updateVolume();
 }	
 
 /**
@@ -190,12 +206,15 @@ function displayPlaying() {
 	var isPlaying = bg.isPlaying();
 	
 	$(".podcast-playing").removeClass("podcast-playing");	// On retire la classe de lecture à l'ensemble des pods
+	$("#table-podcasts tbody tr").removeClass("row-playing");
 
 	// Si le feed affiché est celui en cours de lecture, on pourra donner au podcast en cours
 	// le classe adéquate
 	if(displayedFeed == curFeed) {
-		if(bg.isPlaying())
+		$("#table-podcasts tbody tr:nth-of-type("+(curPod+1)+")").addClass("row-playing");
+		if(bg.isPlaying()) {
 			$("#table-podcasts tbody tr:nth-of-type("+(curPod+1)+") .table-podcasts-actions-ply").addClass("podcast-playing");
+		}
 	} 
 
 	// Si un podcast est sélectionné pour lecture
@@ -240,6 +259,15 @@ function updateProgress() {
 }
 
 /**
+ * Mise à jour du volume
+ */
+function updateVolume() {
+	var curVol = bg.getVolume();
+	
+	$("#player-vol-val").css("width", (curVol*75) + "px");
+}
+
+/**
  * Fonction qui rajoute les 0 devant les chiffres inférieurs à 10
  */
 function formatSeconds(txt) {
@@ -259,5 +287,31 @@ function updateTime(ti) {
 	bg.setTime(progress * curDuration);
 }
 
+
+/**
+ * Envoi du nouveau volume au contrôleur lors d'un clic sur la barre de volume
+ */
+function updateVol(val) {
+	var volume = event.offsetX/75;		// Barre de volume à 100px
+	bg.setVolume(volume);
+}
+
+/**
+ * Affichage du préchargement de l'audio
+ */
+function buffering(bln) {
+	if(bln) {
+		$("#progress-buffer").html(chrome.i18n.getMessage("buffering"));
+		$("#progress-buffer").show();
+	} else {
+		
+		$("#progress-buffer").hide();
+	}
+}
+
+
 // Ajout de l'eventHandler pour le clic sur la barre de progression
 $('#player-title').on("click", function(event) { updateTime(event.offsetX);});
+
+// Ajout de l'eventHandler pour le volumelevel
+$('#player-vol').on("click", function(event) { updateVol(event.offsetX);});

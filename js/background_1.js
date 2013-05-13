@@ -51,7 +51,7 @@ var titlePlaying = function() { return nowplaying; }
 var idPlaying = function() { return idplaying; }
 var numPlaying = function() { return numplaying; }
 var getVolume = function() { return player.volume; }
-var setVolume = function(vol) { player.volume = vol; }
+//var setVolume = function(vol) { player.volume = vol; }
 var getCurFeed = function() { return curFeed; }
 var getCurPod = function() { return curPod; }
 var getCurTime = function() { return curTime; }
@@ -78,24 +78,24 @@ var addFeed = function(feed) {
  * Fonction qui permet de supprimer un feed
  */                 
 var delFeed = function(feed) {
-	var blntrouve = false;
-	var num;
+	feeds.splice(feed, 1);
+	saveFeeds();
+	// loadpage();
 
-	// On va vérifier que le flux existe bien
-	for(i = 0; i < feeds.length; i++) {
-		if(feeds[i].url == feed) {
+	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
+	var views = chrome.extension.getViews();	
+
+	var blntrouve = false;
+	for(i = 0; i < views.length; i++) {
+		//console.log("View : " + views[i].location.href);
+		if (views[i].location.href == viewPopupUrl) {
+			var popupview = views[i];  		
 			blntrouve = true;
-			num = i; 
+			break;
 		}
 	}
-  
-	// Si le feed existe on va le supprimer, recharger les flux
-	// et sauvegarder les données
-	if(blntrouve) {
-		feeds.splice(num, 1);
-		loadpage();
-		saveFeeds();
-	}
+
+	if(blntrouve) { popupview.location.reload(true); } 
 }
 
 /**
@@ -191,6 +191,7 @@ function togglePlay() {
 	} else {
 		player.pause();
 		playing = false;
+		displayBuffer(false);
 	}
 
 	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
@@ -232,6 +233,7 @@ function togglePlayPodcast(numfeed, numpodcast) {
 	} else {
 		player.pause();
 		playing = false;
+		displayBuffer(false);
 	}
 
 	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
@@ -377,6 +379,8 @@ function loadpage() {
 	player.addEventListener("ended", function() {playNext();}, true);
 	player.addEventListener("error", function() {gotError();},true);
 	player.addEventListener("timeupdate", updateProgress);
+	player.addEventListener("waiting", function() {displayBuffer(true);});
+	player.addEventListener("playing", function() {displayBuffer(false);});
 }
 
 function htmlizeAmps(s){
@@ -391,21 +395,30 @@ function htmlizeAmps(s){
  * Mise à jour des flux
  */                 
 function majFlux(numf) {
-	$.ajax({
-		url: feeds[numf].url,
-		dataType: "text",
-		success: function(data) {			
-			parser=new DOMParser();
+	chrome.permissions.request({
+		origins: ['http://*/*']
+	}, function(granted) {
+		if(granted) {
+			$.ajax({
+				url: feeds[numf].url,
+				dataType: "text",
+				success: function(data) {			
+					parser=new DOMParser();
 
-			txt = htmlizeAmps(data);
-  			xmlDoc=parser.parseFromString(txt,"text/xml");
+					txt = htmlizeAmps(data);
+		  			xmlDoc=parser.parseFromString(txt,"text/xml");
 
-			loadPodcasts(numf, xmlDoc);
-		},
-		error: function(jqxhr, status, err) {
-			console.log(status);
+					loadPodcasts(numf, xmlDoc);
+				},
+				error: function(jqxhr, status, err) {
+					console.log(status);
+				}
+			});
+		} else {
+			console.log("No permission");
 		}
 	});
+	
 }
 
 /**
@@ -496,11 +509,65 @@ function updateProgress() {
 }
 
 /**
+ * Handler pour l'event du volume (envoi à la page feeds.html)
+ */
+function updateVol() {
+	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
+	var views = chrome.extension.getViews();	
+
+	curTime = player.currentTime;
+	curDuration = player.duration;
+
+	var blntrouve = false;
+	for(i = 0; i < views.length; i++) {
+		if (views[i].location.href == viewPopupUrl) {
+			var popupview = views[i];  		
+			blntrouve = true;
+			break;
+		}
+	}         
+
+	if (blntrouve) {
+		popupview.updateVolume();
+	}
+}
+
+
+/**
+ * Handler pour l'event de progression de la lecture (envoi à la page feeds.html)
+ */
+function displayBuffer(bln) {
+	var viewPopupUrl = chrome.extension.getURL('feeds.html');	
+	var views = chrome.extension.getViews();	
+
+	curTime = player.currentTime;
+	curDuration = player.duration;
+
+	var blntrouve = false;
+	for(i = 0; i < views.length; i++) {
+		if (views[i].location.href == viewPopupUrl) {
+			var popupview = views[i];  		
+			blntrouve = true;
+			break;
+		}
+	}         
+
+	if (blntrouve) {
+		popupview.buffering(bln);
+	}
+}
+
+/**
  * Controleur pour la progression de lecture
  */
 function setTime(ti) {
 	player.currentTime = ti;
 	updateProgress();
+}
+
+function setVolume(vol) { 
+	player.volume = vol; 
+	updateVol();
 }
 
 window.addEventListener("load", loadpage);

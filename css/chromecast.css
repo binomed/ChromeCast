@@ -164,6 +164,8 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 	z-index:101;
 }
 
+
+
 .addbutton { margin-left:20px;}
 .title { margin-left:10px; margin-top: 10px; font-size: 30px;}
 .del_podcast { text-align:right;}
@@ -178,6 +180,12 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 
 .table-podcasts tr:nth-child(odd) td {
 	background-color: white;
+}
+
+.table-podcasts tr.row-playing td {
+	color: white;
+	/*font-weight: bold;*/
+	background-color: gray;
 }
 
 .table-podcasts th {
@@ -199,13 +207,29 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 	width:40px;
 }
 
+.sidebar-feed-del {
+	line-height:40px;
+	background: url('../images/delete.png');
+	background-position: center center;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	width:20px;
+	float:left;
+	visibility: hidden;
+	cursor: pointer;
+}
+
+.sidebar-feed:hover .sidebar-feed-del {
+	visibility: visible;
+}
+
 .sidebar-feed-txt {
 	float:left; 
 	line-height:40px; 
 	font-size:15px; 
 	margin-left: 10px; 
 	text-overflow: ellipsis; 
-	width: 220px; 
+	width: 210px; 
 	white-space: nowrap; 
 	overflow: hidden;
 	cursor: pointer;
@@ -273,11 +297,13 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 	background-color: black;
 	width:0px;
 	opacity: 0.8;
+	transition-property: width; transition-duration: 0.5s;
 }
 
 .title-playing { position:absolute; font-weight: normal; margin-left: 10px; font-size: 15px; margin-top:0px; margin-bottom: 5px; width: 300px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
 .subtitle-playing { position: absolute; line-height: 10px; margin-left: 10px; margin-top:24px; width: 300px; overflow: hidden; white-space:nowrap; text-overflow: ellipsis; }
 .progress-text { position: absolute; width: 395px; line-height:40px; text-align: right;}
+.progress-buffer { position: absolute; width: 395px; line-height:40px; text-align: right; margin-top: 13px; display: none; opacity:0.4; font-size: 9px;}
 
 .player-rew {
 	background: url('../images/player-rew.png');
@@ -313,3 +339,36 @@ a:hover, .feedsbutton:hover, .playbuttonclick:hover, a h3:hover {color:#224C77; 
 .podcast-playing, .player-play-playing {
 	background-position-y: 40px;
 }
+
+.player-vol {
+	width: 75px; height: 50px;
+	margin-left:10px;
+
+	float: left;
+	cursor:pointer;
+	position: relative;
+	background: black;
+	opacity: 0.8;
+}
+
+.player-vol-val, .player-vol-bg {
+	position:absolute;
+	height: 50px;
+}
+
+.player-vol-val {
+	background-color: lightblue	;
+	width: 50px;
+	transition-property: width; transition-duration: 0.5s;
+}
+
+.player-vol-bg {
+	background: url('../images/volume-front.png');
+	width: 75px; 
+}
+
+#feedurllabel{
+	color: black;
+}
+
+

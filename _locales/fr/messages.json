@@ -15,6 +15,10 @@
     "message":"Liste des podcasts",
     "description":"Podcast List"
   },
+  "buffering":{
+    "message":"chargement...",
+    "description":"Buffering Text"
+  },
   "delFeed":{
     "message":"Êtes-vous sur de vouloir supprimer le flux $FEED$ ?",
     "description":"Delete message",
