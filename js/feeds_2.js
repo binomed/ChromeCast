@@ -317,3 +317,5 @@ $('#player-title').on("click", function(event) { updateTime(event.offsetX);});
 
 // Ajout de l'eventHandler pour le volumelevel
 $('#player-vol').on("click", function(event) { updateVol(event.offsetX);});
+
+

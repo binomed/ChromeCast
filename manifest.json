@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ChromeCast",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "__MSG_extDesc__",
   "background": {
 	 "persistent": true,
@@ -22,5 +22,6 @@
   "optional_permissions": [
     "http://*/*"
   ],
-  "default_locale":"fr"
+  "default_locale":"en",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
