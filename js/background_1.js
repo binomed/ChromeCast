@@ -423,6 +423,10 @@ function majFlux(numf) {
 	
 }
 
+function getText(xml, node) {
+	// if(xml.getElementsByTagName('link')[0].data);
+}
+
 /**
  * Fonction qui charge les podcasts pour chaque feed
  */                 
@@ -442,7 +446,8 @@ function loadPodcasts(num, xml) {
 
 	feeds[num].title = xml.getElementsByTagName('title')[0].childNodes[0].nodeValue;
 	feeds[num].subtitle = xml.getElementsByTagName('description')[0].childNodes[0].nodeValue;
-	feeds[num].link = xml.getElementsByTagName('link')[0].childNodes[0].nodeValue;
+	// console.log(xml.getElementsByTagNameNS('','link')[0]);
+	feeds[num].link = xml.getElementsByTagNameNS('','link')[0].childNodes[0].nodeValue; // Pb with  atom NS
 
 	var podcasts = new Array();
 	for(i = 0; i < items.length; i++) {
