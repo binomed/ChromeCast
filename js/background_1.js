@@ -374,6 +374,12 @@ function gotError() {
 function loadpage() {
 	player = document.getElementById("idplayer");
 
+	savedVolume = localStorage.getItem("volume");
+	
+	if(savedVolume != null) {
+		setVolume(savedVolume);
+	}
+
 	for(numflux = 0; numflux < feeds.length; numflux++) { majFlux(numflux); }
 
 	player.addEventListener("ended", function() {playNext();}, true);
@@ -578,6 +584,7 @@ function setTime(ti) {
 
 function setVolume(vol) { 
 	player.volume = vol; 
+	localStorage.setItem('volume', vol);
 	updateVol();
 }
 
